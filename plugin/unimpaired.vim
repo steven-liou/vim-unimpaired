@@ -351,12 +351,7 @@ exe s:Map('n', ']o', '<Plug>(unimpaired-disable)')
 exe s:Map('n', 'yo<Esc>', '<Nop>')
 exe s:Map('n', '[o<Esc>', '<Nop>')
 exe s:Map('n', ']o<Esc>', '<Nop>')
-exe s:Map('n', '=s', '<Plug>(unimpaired-toggle)')
-exe s:Map('n', '<s', '<Plug>(unimpaired-enable)')
-exe s:Map('n', '>s', '<Plug>(unimpaired-disable)')
-exe s:Map('n', '=s<Esc>', '<Nop>')
-exe s:Map('n', '<s<Esc>', '<Nop>')
-exe s:Map('n', '>s<Esc>', '<Nop>')
+
 
 function! s:SetupPaste() abort
   let s:paste = &paste
