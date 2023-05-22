@@ -148,24 +148,7 @@ function! s:PreviousFileEntry(count) abort
   endif
 endfunction
 
-function! s:NextFileEntry(count) abort
-  let window = s:GetWindow()
 
-  if get(window, 'quickfix')
-    return 'cnewer ' . a:count
-  elseif get(window, 'loclist')
-    return 'lnewer ' . a:count
-  else
-    return 'edit ' . s:fnameescape(fnamemodify(s:FileByOffset(v:count1), ':.'))
-  endif
-endfunction
-
-nnoremap <silent> <Plug>(unimpaired-directory-next)     :<C-U>execute <SID>NextFileEntry(v:count1)<CR>
-nnoremap <silent> <Plug>(unimpaired-directory-previous) :<C-U>execute <SID>PreviousFileEntry(v:count1)<CR>
-nnoremap <silent> <Plug>unimpairedDirectoryNext     :<C-U>execute <SID>NextFileEntry(v:count1)<CR>
-nnoremap <silent> <Plug>unimpairedDirectoryPrevious :<C-U>execute <SID>PreviousFileEntry(v:count1)<CR>
-exe s:Map('n', ']f', '<Plug>(unimpaired-directory-next)')
-exe s:Map('n', '[f', '<Plug>(unimpaired-directory-previous)')
 
 " Section: Diff
 
